@@ -1,0 +1,171 @@
+/* First page  */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: white;
+  font-weight: 300;
+  background: #50a3a2;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  margin: 10% auto;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.container h1 {
+  font-size: 40px;
+  font-weight: 200;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  16% {
+    opacity: 1;
+  }
+  84% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.message {
+  margin: 15rem auto;
+  opacity: 0;
+  text-align: center;
+  -webkit-animation: fadeInOut 6s;
+  animation: fadeInOut 6s;
+}
+
+/* Main Table */
+.formContainer {
+  clear: both;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.formContainer input {
+  width: 20%;
+  clear: both;
+}
+
+input {
+  border: 1px solid rgba(252, 252, 252, 0.4);
+  background-color: rgba(252, 252, 252, 0.2);
+  width: 250px;
+  border-radius: 3px;
+  font-family: 'Source Sans Pro', sans-serif;
+  padding: 10px 15px;
+  margin: 0 auto 10px auto;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  font-weight: 300;
+}
+
+button {
+  appearance: none;
+  outline: 0;
+  background-color: white;
+  border: 0;
+  padding: 5px 15px;
+  color: #50a3a2;
+  border-radius: 3px;
+  width: 250px;
+  font-size: 18px;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 0 auto 10px auto;
+}
+
+td,
+th {
+  border: 1px solid #eee;
+  padding: 0.5rem;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.btn {
+  border-radius: 0px !important;
+  border: none;
+}
+
+.btn-danger:focus,
+.btn-danger:hover {
+  background: #2a2a2a;
+  color: #fff;
+}
+
+#add {
+  background: #2a2a2a;
+  padding: 10px;
+  border-bottom: 3px solid #fc0;
+  text-align: left;
+  margin-bottom: 10px;
+}
+#add h4,
+#add p {
+  color: #fff;
+}
+#add form {
+  display: inline-flex;
+}
+#add form input {
+  padding: 5px;
+  margin-right: 5px;
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+.tableFadein {
+  animation: transitionIn 0.75s;
+}
+
+@keyframes transitionIn {
+  from {
+    opacity: 0;
+    transform: rotateX(-10deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotateX(0);
+  }
+}
+
+/* 404 page */
+#errorpage {
+  display: table;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+}
+
+.error {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.error h1 {
+  font-family: 'Lato', sans-serif;
+  color: #eee;
+  font-size: 50px;
+  display: inline-block;
+  padding-right: 12px;
+}
