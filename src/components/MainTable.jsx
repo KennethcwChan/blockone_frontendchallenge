@@ -1,24 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 import GenTable from './GenerateTable';
-import FetchData from './FetchAPIData';
-
-import archivedData from '../archivedData';
 import isValidDate from './ErrorHandler/DateValidation';
 import isValidAction from './ErrorHandler/ActionValidation';
 import isValidCurrency from './ErrorHandler/CurrencyValidation';
 import isValidAmount from './ErrorHandler/AmountValidation';
 import isValidDescription from './ErrorHandler/DescriptionValidation';
 
-/*
-First and foremost, I would like to apologize for not being able to properly setup the API.
-Unfortunately the data that is being used is stored in a file named archivedData.js
-*/
-
-const MainTablePage = (props) => {
-  const APIData = FetchData();
+const MainTablePage = () => {
   //useState hooks
-  const [mainTable, setMainTable] = useState(archivedData);
+  const [mainTable, setMainTable] = useState([]);
   const [timestamp, setTimestamp] = useState('');
   const [action, setAction] = useState('');
   const [description, setDescription] = useState('');
@@ -33,9 +25,19 @@ const MainTablePage = (props) => {
     amount: amount,
     currency: currency,
   };
-  console.log(APIData == archivedData);
 
-  //validation
+  //Accessing data from API
+  useEffect(() => {
+    const fetchURL =
+      'http://my-json-server.typicode.com/alexradulescu/transactions-fake-api/transactions';
+    const fetchData = async () => {
+      const result = await axios(fetchURL);
+      setMainTable(result.data);
+    };
+    fetchData();
+  }, []);
+
+  //Validation
   const timeStampValidation = addEntry.timestamp;
   const actionValidation = addEntry.action;
   const descriptionValidation = addEntry.description;
