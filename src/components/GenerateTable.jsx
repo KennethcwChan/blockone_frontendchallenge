@@ -1,18 +1,11 @@
 import React from 'react';
 import FetchData from './FetchAPIData';
 
-const GenTablePage = (props) => {
+const GenTable = (props) => {
   const entries = FetchData();
 
   const loadHead = () => {
-    let head = [
-      'date',
-      'action',
-      'description',
-      'amount',
-      'currency',
-      'modification',
-    ];
+    let head = ['date', 'action', 'description', 'amount', 'currency'];
 
     return head.map((k, v) => {
       return <th key={v}>{k.toUpperCase()}</th>;
@@ -32,10 +25,6 @@ const GenTablePage = (props) => {
             <td>{entry.description}</td>
             <td>{entry.amount}</td>
             <td>{entry.currency}</td>
-
-            <td>
-              <button className="btn btn-danger">Delete</button>
-            </td>
           </tr>
         );
       })
@@ -54,4 +43,4 @@ const GenTablePage = (props) => {
   );
 };
 
-export default GenTablePage;
+export default GenTable;
