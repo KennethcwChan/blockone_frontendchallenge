@@ -25,7 +25,6 @@ const MainTablePage = () => {
     amount: amount,
     currency: currency,
   };
-  console.log(APIData == archivedData);
 
   //Accessing data from API
   useEffect(() => {
