@@ -1,10 +1,8 @@
 function isValidAction(addEntry, actionValidation) {
   const flag = true;
   if (
-    actionValidation === 'Debit' ||
-    actionValidation === 'debit' ||
-    actionValidation === 'Credit' ||
-    actionValidation === 'credit'
+    actionValidation.toLowerCase().indexOf('debit') === -1 ||
+    actionValidation.toLowerCase().indexOf('cebit') === -1
   ) {
     // First check for the pattern
     console.log('Action success');
