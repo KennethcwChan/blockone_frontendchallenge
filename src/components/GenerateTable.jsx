@@ -1,9 +1,6 @@
 import React from 'react';
-import FetchData from './FetchAPIData';
 
 const GenTable = (props) => {
-  const entries = FetchData();
-
   const loadHead = () => {
     let head = ['date', 'action', 'description', 'amount', 'currency'];
 
@@ -13,8 +10,6 @@ const GenTable = (props) => {
   };
 
   const loadBody = () => {
-    const { id, timestamp, action, description, amount, currency } = entries;
-
     return (
       props.entries &&
       props.entries.map((entry) => {
