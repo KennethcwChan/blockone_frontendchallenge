@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import GenTablePage from './GenerateTable';
+import GenTable from './GenerateTable';
 import FetchData from './FetchAPIData';
 
 import archivedData from '../archivedData';
@@ -16,7 +16,7 @@ Unfortunately the data that is being used is stored in a file named archivedData
 */
 
 const MainTablePage = (props) => {
-  //const APIData = FetchData();
+  const APIData = FetchData();
   //useState hooks
   const [mainTable, setMainTable] = useState(archivedData);
   const [timestamp, setTimestamp] = useState('');
@@ -26,13 +26,14 @@ const MainTablePage = (props) => {
   const [currency, setCurrency] = useState('');
 
   const addEntry = {
-    id: mainTable.length + 1,
+    id: `t${mainTable.length + 1}`,
     timestamp: timestamp,
     action: action,
     description: description,
     amount: amount,
     currency: currency,
   };
+  console.log(APIData == archivedData);
 
   //validation
   const timeStampValidation = addEntry.timestamp;
@@ -41,11 +42,11 @@ const MainTablePage = (props) => {
   const amountValidation = addEntry.amount;
   const currencyValidation = addEntry.currency;
 
-  const checkDate = isValidDate(addEntry, timeStampValidation);
-  const checkAction = isValidAction(addEntry, actionValidation);
-  const checkDescription = isValidDescription(addEntry, descriptionValidation);
-  const checkAmount = isValidAmount(addEntry, amountValidation);
-  const checkCurrency = isValidCurrency(addEntry, currencyValidation);
+  const dateFlag = isValidDate(addEntry, timeStampValidation);
+  const actionFlag = isValidAction(addEntry, actionValidation);
+  const descriptionFlag = isValidDescription(addEntry, descriptionValidation);
+  const amountFlag = isValidAmount(addEntry, amountValidation);
+  const currencyFlag = isValidCurrency(addEntry, currencyValidation);
 
   function setReset(set) {
     //hook - set the table with new entry
@@ -59,11 +60,11 @@ const MainTablePage = (props) => {
 
   function handleFormSubmit(event) {
     if (
-      checkDate &&
-      checkAction &&
-      checkDescription &&
-      checkAmount &&
-      checkCurrency
+      dateFlag &&
+      actionFlag &&
+      descriptionFlag &&
+      amountFlag &&
+      currencyFlag
     ) {
       //append entry to the bottom of list
       const newSet = [...mainTable, addEntry];
@@ -74,13 +75,15 @@ const MainTablePage = (props) => {
 
       setReset(sortedSet);
     } else {
-      alert('Please try again');
+      alert(
+        `Please try again - \n Timestamp: (yyyy-mm-dd), \n Action: (credit/debit), \n Description: (min. 4 chars), \n Amount: (ints/floats), \n Currency: (SGD, HKD, USD)`
+      );
       console.log('Please try again');
     }
     event.preventDefault();
   }
 
-  const loadEntries = () => {
+  const addEntryToTable = () => {
     return (
       <div>
         <form className="formContainer tableFadein" onSubmit={handleFormSubmit}>
@@ -134,9 +137,9 @@ const MainTablePage = (props) => {
 
   return (
     <div>
-      <section id="add">{loadEntries()}</section>
+      <section id="add">{addEntryToTable()}</section>
       <section id="main">
-        <GenTablePage entries={mainTable} />
+        <GenTable entries={mainTable} />
       </section>
     </div>
   );

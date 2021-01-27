@@ -1,6 +1,6 @@
 const archivedData = [
   {
-    id: 1,
+    id: 't1',
     timestamp: '2020-10-18',
     action: 'DEBIT',
     description: 'Utilities Bill',
@@ -8,7 +8,7 @@ const archivedData = [
     currency: 'SGD',
   },
   {
-    id: 2,
+    id: 't2',
     timestamp: '2020-10-15',
     action: 'DEBIT',
     description: 'Telco Bill',
@@ -16,7 +16,7 @@ const archivedData = [
     currency: 'SGD',
   },
   {
-    id: 3,
+    id: 't3',
     timestamp: '2020-10-11',
     action: 'DEBIT',
     description: 'Restaurant X',
@@ -24,7 +24,7 @@ const archivedData = [
     currency: 'SGD',
   },
   {
-    id: 4,
+    id: 't4',
     timestamp: '2020-10-11',
     action: 'DEBIT',
     description: 'Cafe Y',
@@ -32,7 +32,7 @@ const archivedData = [
     currency: 'SGD',
   },
   {
-    id: 5,
+    id: 't5',
     timestamp: '2020-10-05',
     action: 'DEBIT',
     description: 'Bookstore',
@@ -40,7 +40,7 @@ const archivedData = [
     currency: 'SGD',
   },
   {
-    id: 6,
+    id: 't6',
     timestamp: '2020-10-01',
     action: 'CREDIT',
     description: 'From John',
@@ -48,7 +48,7 @@ const archivedData = [
     currency: 'SGD',
   },
   {
-    id: 7,
+    id: 't7',
     timestamp: '2020-09-27',
     action: 'CREDIT',
     description: 'Amazon Refund',
@@ -56,7 +56,7 @@ const archivedData = [
     currency: 'USD',
   },
   {
-    id: 8,
+    id: 't8',
     timestamp: '2020-09-25',
     action: 'CREDIT',
     description: 'Youtube ads payment',
@@ -64,7 +64,7 @@ const archivedData = [
     currency: 'USD',
   },
   {
-    id: 9,
+    id: 't9',
     timestamp: '2020-09-25',
     action: 'DEBIT',
     description: 'Bar T',
@@ -72,7 +72,7 @@ const archivedData = [
     currency: 'SGD',
   },
   {
-    id: 10,
+    id: 't10',
     timestamp: '2020-09-24',
     action: 'DEBIT',
     description: 'Subscription',

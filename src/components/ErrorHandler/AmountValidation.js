@@ -1,5 +1,5 @@
 function isValidAmount(addEntry, amountValidation) {
-  const regex = /^[0-9]+$/;
+  const regex = /^[0-9.]+$/;
   const flag = true;
 
   if (!amountValidation) {
